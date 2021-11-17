@@ -18,7 +18,7 @@
         <div class="title">
             BuzzQuizz
         </div>
-        <div class="quizz-creation-caller">
+        <div class="quizz-creation-caller hidden">
             <span>
                 Você não criou nenhum quizz ainda :(
             </span>
@@ -26,36 +26,67 @@
                 Criar Quizz
             </button>
         </div>
+        <div class="user-quizzes">
+            <div>
+                <h1>Seus Quizzes</h1>
+                <ion-icon name="add-circle"></ion-icon>
+            </div>
+            <div class="test">
+                <figure>
+                    <img src="assets/Alnwick_Castle.png">
+                    <figcaption>
+                        O quão Potterhead é você?
+                    </figcaption>
+                    <div class="quizz-settings-caller">
+                        <ion-icon name="create-outline"></ion-icon>
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </div>
+                </figure>
+            </div>
+            <figure>
+                <img src="assets/De_Ferias_com_o_Ex.png">
+                <figcaption>
+                    É ex-BBB ou ex-De férias com o Ex?
+                </figcaption>
+                <div class="quizz-settings-caller">
+                    <ion-icon name="create-outline"></ion-icon>
+                    <ion-icon name="trash-outline"></ion-icon>
+                </div>
+            </figure>
+        </div>
         <div class="all-quizzes">
             <h1>
                 Todos os Quizzes
             </h1>
             <figure>
-                <img src="assets/Os Simpsons.png">
+                <img src="assets/Os_Simpsons.png">
                 <figcaption>
                     Acerte os personagens corretos dos Simpsons e prove seu amor!
                 </figcaption>
             </figure>
             <figure>
-                <img src="assets/De Boas.png">
+                <img src="assets/De_Boas.png">
                 <figcaption>
                     O quanto você é de boas?
                 </figcaption>
             </figure>
             <figure>
-                <img src="assets/Os Simpsons.png">
+                <img src="assets/Os_Simpsons.png">
                 <figcaption>
                     Acerte os personagens corretos dos Simpsons e prove seu amor!
                 </figcaption>
             </figure>
             <figure>
-                <img src="assets/De Boas.png">
+                <img src="assets/De_Boas.png">
                 <figcaption>
                     O quanto você é de boas?
                 </figcaption>
             </figure>
         </div>
     </div>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js\script.js"></script>
 </body>
 
 </html>
