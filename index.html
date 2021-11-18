@@ -15,10 +15,10 @@
 </head>
 
 <body>
+    <div class="title">
+        BuzzQuizz
+    </div>
     <div class="page">
-        <div class="title">
-            BuzzQuizz
-        </div>
         <div class="quizz-creation-caller hidden">
             <span>
                 Você não criou nenhum quizz ainda :(
@@ -27,7 +27,7 @@
                 Criar Quizz
             </button>
         </div>
-        <div class="user-quizzes">
+        <div class="user-quizzes hidden">
             <div class="title-quizz">
                 <h1>Seus Quizzes</h1>
                 <ion-icon name="add-circle"></ion-icon>
@@ -55,7 +55,7 @@
                 </figure>
             </div>
         </div>
-        <div class="all-quizzes">
+        <div class="all-quizzes hidden">
             <h1>
                 Todos os Quizzes
             </h1>
@@ -90,6 +90,71 @@
             <img src="assets/Loading.gif">
             <span>Carregando</span>
         </div>
+    </div>
+    <div class="page2">
+        <div class="header-quiz">
+            <figure>
+                <img src="assets/Alnwick_Castle.png">
+                <figcaption>
+                    O quão Potterhead é você?
+                </figcaption>
+            </figure>
+        </div>
+        <div class="questions">
+            <div class="question">
+                <h1>Em qual animal Olho-Tonto Moody se transformou em Malfoy</h1>
+                <figure>
+                    <div class="selected correct">
+                        <img src="/assets/gato.png" alt="Gatíneo">
+                        <figcaption>Gatíneo</figcaption>
+                    </div>
+                    <div class="blurry incorrect">
+                        <img src="/assets/rato.png" alt="Ratata">
+                        <figcaption>Ratata</figcaption>
+                    </div>
+                    <div>
+                        <img src="/assets/sapo.png" alt="Sapo Gordo">
+                        <figcaption>Sapo Gordo</figcaption>
+                    </div>
+                    <div>
+                        <img src="/assets/furao.png" alt="furão">
+                        <figcaption>Mustela Putorios (furão)</figcaption>
+                    </div>
+                </figure>
+            </div>
+            <div class="question">
+                <h1>Qual dos objetos abaixo NÃO é uma horcrux?</h1>
+                <figure>
+                    <div>
+                        <img src="/assets/harry.png" alt="Harry">
+                        <figcaption>The boy who lived</figcaption>
+                    </div>
+                    <div>
+                        <img src="/assets/book.png" alt="Book">
+                        <figcaption>O livro monstruoso dos monstros</figcaption>
+                    </div>
+                    <div>
+                        <img src="/assets/ring.png" alt="ring">
+                        <figcaption>Anel Velho</figcaption>
+                    </div>
+                    <div>
+                        <img src="/assets/diadema.png" alt="diadema Ravenclaw">
+                        <figcaption>Diadema de Ravenclaw</figcaption>
+                    </div>
+                </figure>
+            </div>
+            
+            <div class="finish">
+                <h1>88% de acerto: Você é praticamente aluno de Hogwarts!</h1>
+                <div>
+                    <img src="/assets/welcome.png" alt="welcome">
+                    <h2>
+                        Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.
+                    </h2>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
