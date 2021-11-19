@@ -7,6 +7,7 @@ let percentage
 let numQuestions
 
 let levelsHits
+let idQuiz 
 
 function getAllQuizzes(){
     const promiseAllQuizzes = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
@@ -35,6 +36,7 @@ function getAllQuizzes(){
 getAllQuizzes()
 
 function showQuiz(id){
+    idQuiz = id
     page1.classList.add('hidden')
     page2.classList.remove('hidden')
 
@@ -42,8 +44,8 @@ function showQuiz(id){
 
 }
 
-function getQuiz(id) {
-    const promiseQuiz = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`)
+function getQuiz(idQuiz) {
+    const promiseQuiz = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idQuiz}`)
     promiseQuiz.then((answer) =>{
         const quiz = answer.data
         loadQuiz(page2,quiz)
@@ -92,7 +94,10 @@ function loadQuiz(element, quiz){
             </figcaption>
         </figure>
     </div>
-    <div class="questions"></div>
+    <div class="questions">
+    </div>
+    <button class="restart-quizz" onclick="restartQuiz()">Reiniciar Quizz</button>
+    <h1 class="back-home" onclick="backHome()">Voltar para Home</h1>
         `
     const questionsHTML = document.querySelector('.questions')
     loadQuestions(questionsHTML,quiz)
@@ -217,4 +222,25 @@ function Finish() {
         </h2>
     </div>
     `
+}
+function backHome() {
+   /*  page1.classList.remove('hidden')
+    page2.classList.add('hidden') */
+    window.location.reload()
+}
+function restartQuiz() {
+    const element = document.querySelector('.header-quiz')
+    const correctAnswers = document.querySelectorAll('.correct')
+    const incorrectAnswers = document.querySelectorAll('.incorrect')
+    
+    for (let i = 0; i < correctAnswers.length; i++) {
+        let answer = document.querySelector('.correct')
+        answer.classList.remove('correct')
+    }
+    for (let i = 0; i < incorrectAnswers.length; i++) {
+        let answer = document.querySelector('.incorrect')
+        answer.classList.remove('incorrect')
+    }
+    getQuiz(idQuiz)
+    element.scrollIntoView()
 }
