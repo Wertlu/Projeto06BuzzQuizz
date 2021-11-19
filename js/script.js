@@ -3,6 +3,10 @@ let quizzesObj //armazena objeto de todos os quizzes
 const page1 = document.querySelector('.page1') //Tela 1
 const page2 = document.querySelector('.page2') //Tela 2
 
+let percentage
+let numQuestions
+
+let levelsHits
 
 function getAllQuizzes(){
     const promiseAllQuizzes = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
@@ -97,6 +101,9 @@ function loadQuiz(element, quiz){
 
 function loadQuestions(element,quiz) {
     let questions = quiz.questions
+    numQuestions = quiz.questions.length
+    levelsHits = quiz.levels
+
 
     for(let i = 0; i < questions.length; i++){
         let titleQuestion = questions[i].title
@@ -113,6 +120,7 @@ function loadQuestions(element,quiz) {
 
         loadAnswers(answer,questions[i])
     }
+    element.innerHTML += `<div class="finish hidden"></div>`
 
 }
 function loadAnswers(element,question){
@@ -138,10 +146,7 @@ function loadAnswers(element,question){
 
 function addBlurry(element){
     const divAnswers = element.parentNode
-    console.dir(divAnswers.parentNode);
-    console.log(divAnswers.parentNode)
-    console.log(divAnswers.parentNode.nextElementSibling)
-
+    element.parentNode.parentNode.classList.add('answered')
     for (let i = 0; i < divAnswers.childElementCount; i++) {
         divAnswers.children[i].classList.add('blurry')
         divAnswers.children[i].removeAttribute('onclick')    
@@ -151,6 +156,7 @@ function addBlurry(element){
     setTimeout(()=>{
         divAnswers.parentNode.nextElementSibling.scrollIntoView()
     },2000)
+    setTimeout(showFinish(),2000)
 }
 function checkAnswer(element) {
     const divAnswers = element.parentNode
@@ -163,4 +169,52 @@ function checkAnswer(element) {
             divAnswers.children[i].classList.add('incorrect')   
         }  
     }
+}
+function showFinish() {
+    const check = document.querySelectorAll('.question')
+    const finish = document.querySelector('.finish')
+
+    for (let i = 0; i < check.length; i++) {
+        if(!check[i].classList.contains('answered')){
+            return
+        }    
+    }
+    finish.classList.remove('hidden')
+    calculatepercentage()
+}
+function calculatepercentage() {
+    const allAnswers = document.querySelectorAll('.answers div')
+    let questionsCorrect = 0
+
+    for (let i = 0; i < allAnswers.length; i++) {
+        let containsCorrect = allAnswers[i].classList.contains('correct')
+        let notContainsBlurry = !(allAnswers[i].classList.contains('blurry'))
+        if(containsCorrect && notContainsBlurry){
+            questionsCorrect++
+        }
+    }
+    percentage = ((questionsCorrect / numQuestions) * 100).toFixed(0)
+    Finish()
+}
+function Finish() {
+    const Finish = document.querySelector('.finish')
+    let imageFinish
+    let textFinish
+    let titleFinish
+    for (let i = 0; i < levelsHits.length; i++) {
+        if(percentage >= levelsHits[i].minValue){
+            imageFinish = levelsHits[i].image
+            textFinish = levelsHits[i].text
+            titleFinish = levelsHits[i].title
+        }
+    }
+    Finish.innerHTML = `
+    <h1>${percentage}% de acerto: ${titleFinish}</h1>
+    <div>
+        <img src="${imageFinish}">
+        <h2>
+            ${textFinish}
+        </h2>
+    </div>
+    `
 }
