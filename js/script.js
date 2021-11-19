@@ -88,8 +88,7 @@ function loadQuiz(element, quiz){
             </figcaption>
         </figure>
     </div>
-    <div class="questions">
-    </div>
+    <div class="questions"></div>
         `
     const questionsHTML = document.querySelector('.questions')
     loadQuestions(questionsHTML,quiz)
@@ -104,9 +103,10 @@ function loadQuestions(element,quiz) {
         let colorQuestion = questions[i].color
         
         element.innerHTML += `
-        <h1 style="background:${colorQuestion}">${titleQuestion}</h1>
-        <figure class="answers">
-        </figure>
+        <div class="question">
+            <h1 style="background:${colorQuestion}">${titleQuestion}</h1>
+            <figure class="answers"></figure>
+        </div>
         `
         let answersHTML = document.querySelectorAll('figure.answers')
         let answer = answersHTML[i]
@@ -117,7 +117,6 @@ function loadQuestions(element,quiz) {
 }
 function loadAnswers(element,question){
     let answer = question.answers
-
     //embaralha as respostas
     answer.sort(() => {
         return Math.random()-0.5;
@@ -128,11 +127,40 @@ function loadAnswers(element,question){
         let isCorrect = answer[i].isCorrectAnswer;
 
         element.innerHTML += `
-        <div>
+        <div class="${isCorrect}" onclick="addBlurry(this)">
             <img src="${imageAnswer}">
             <figcaption>${textAnswer}</figcaption>
         </div>
 
         `
+    }
+}
+
+function addBlurry(element){
+    const divAnswers = element.parentNode
+    console.dir(divAnswers.parentNode);
+    console.log(divAnswers.parentNode)
+    console.log(divAnswers.parentNode.nextElementSibling)
+
+    for (let i = 0; i < divAnswers.childElementCount; i++) {
+        divAnswers.children[i].classList.add('blurry')
+        divAnswers.children[i].removeAttribute('onclick')    
+    }
+    element.classList.remove('blurry')
+    checkAnswer(element)
+    setTimeout(()=>{
+        divAnswers.parentNode.nextElementSibling.scrollIntoView()
+    },2000)
+}
+function checkAnswer(element) {
+    const divAnswers = element.parentNode
+
+    for (let i = 0; i < divAnswers.childElementCount; i++) {
+        let x = divAnswers.children[i].classList.contains('true')
+        if(divAnswers.children[i].classList.contains('true')){
+            divAnswers.children[i].classList.add('correct')
+        }else{
+            divAnswers.children[i].classList.add('incorrect')   
+        }  
     }
 }
