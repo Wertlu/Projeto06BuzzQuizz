@@ -180,7 +180,7 @@ div .quizz-settings-caller ion-icon {
 }
 .header-quiz{
     position: relative;
-    top:-62px;
+    top: 32px;
     margin: 0 auto;
     width: 375px;
     height: 142px;
@@ -222,7 +222,7 @@ div .quizz-settings-caller ion-icon {
     align-items: center;
     
     position: relative;
-    top: -42px;   
+    top: 32px;  
 }
 .question{
     width: 375px;

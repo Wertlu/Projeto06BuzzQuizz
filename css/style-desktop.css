@@ -168,7 +168,7 @@
     }
     .header-quiz{
         position: relative;
-        top: 0;
+        top: 69px;
         width: 100%;
         height: 227px;    
     }
@@ -210,7 +210,7 @@
         align-items: center;
         
         position: relative;
-        top: 0;   
+        top: 69px; 
     }
     .question{
         width: 760px;
