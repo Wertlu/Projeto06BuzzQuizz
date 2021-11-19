@@ -254,7 +254,8 @@
         gap: 21px;
     }
     .question figcaption{
-
+        width: 330px;
+        overflow-wrap: break-word;
         font-family: Roboto;
         font-weight: bold;
         font-size: 20px;
