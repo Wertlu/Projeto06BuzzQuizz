@@ -2,19 +2,23 @@
 let quizzesObj //armazena objeto de todos os quizzes
 const page1 = document.querySelector('.page1') //Tela 1
 const page2 = document.querySelector('.page2') //Tela 2
+const page3 = document.querySelector('.page3') //Tela 3
 
 let percentage
 let numQuestions
 
 let levelsHits
-let idQuiz 
+let idQuiz
+
+let userHasQuizz = false //boolean //Essa parte precisa das funções de criação de quizzes do usuário
 
 function getAllQuizzes(){
     const promiseAllQuizzes = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
 
     promiseAllQuizzes.then((answer) =>{
         quizzesObj = answer.data
-        const quizzesHTML = document.querySelector(".all-quizzes .quizzes")
+        const quizzesHTML = document.querySelector(".all-quizzes .quizz-box")
+        quizzesHTML.innerHTML = ""
 
         for(let i = 0; i < quizzesObj.length; i++){
             let titleQuiz = quizzesObj[i].title
@@ -31,6 +35,7 @@ function getAllQuizzes(){
             `
         }
     })
+    showUserQuizzes(userHasQuizz)
 }
 
 getAllQuizzes()
@@ -243,4 +248,21 @@ function restartQuiz() {
     }
     getQuiz(idQuiz)
     element.scrollIntoView()
+}
+
+function showUserQuizzes(userHasQuizz){
+    console.log(userHasQuizz);
+    const quizCriationCaller = document.querySelector('.quizz-creation-caller')
+    const userQuizzes = document.querySelector('.user-quizzes')
+    if (userHasQuizz){
+        quizCriationCaller.classList.add('hidden')
+        userQuizzes.classList.remove('hidden')
+        return
+    }
+    quizCriationCaller.classList.remove('hidden')
+    userQuizzes.classList.add('hidden')
+}
+function showCreationQuiz() {
+    page1.classList.add('hidden')
+    page3.classList.remove('hidden')
 }
