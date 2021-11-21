@@ -10,7 +10,8 @@ body {
     background: #fafafa;
 }
 
-.page {
+
+/* .page {
     height: 100%;
     width: 100vw;
     background: #fafafa;
@@ -170,99 +171,95 @@ div .quizz-settings-caller ion-icon {
     align-items: center;
     text-align: center;
     color: #EC362D;
-}
+} */
+
+
 /* Tela 2 */
-.page{
+
+.page2 .page {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.header-quiz{
+
+.page2 .header-quiz {
     position: relative;
     top: 32px;
     margin: 0 auto;
     width: 375px;
     height: 142px;
 }
-.header-quiz figure{
+
+.page2 .header-quiz figure {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    width: 100%;
-    height: 100%;    
-}
-
-.header-quiz img{
-    position: relative;
-    top:0;
-    object-fit: cover;
-
     width: 100%;
     height: 100%;
+}
 
+.page2 .header-quiz img {
+    position: relative;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url();
 }
-.header-quiz figcaption{
+
+.page2 .header-quiz figcaption {
     position: absolute;
     top: 60px;
-
     font-size: 19px;
     line-height: 22px;
-
     color: #FFFFFF;
 }
 
-
-.questions{
+.page2 .questions {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     position: relative;
-    top: 32px;  
+    top: 32px;
 }
-.question{
+
+.page2 .question {
     width: 375px;
     height: 436px;
     padding: 17px;
     margin-bottom: 40px;
-    
 }
-.question img{
+
+.page2 .question img {
     width: 163px;
     height: 113px;
 }
-.question h1{
+
+.page2 .question h1 {
     width: 100%;
     height: 89px;
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
     text-align: center;
     font-weight: bold;
-
     font-size: 19px;
     line-height: 22px;
-    
     margin-bottom: 20px;
-    
     color: #FFFFFF;
-    
     background: #434CA0;
 }
 
-.question figure{
+.page2 .question figure {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 14px;
 }
-.question figcaption{
+
+.page2 .question figcaption {
     width: 163px;
     overflow-wrap: break-word;
     font-family: Roboto;
@@ -270,107 +267,97 @@ div .quizz-settings-caller ion-icon {
     font-size: 13px;
     line-height: 15px;
     margin-top: 8px;
-    
     color: #000000;
 }
 
-.question .blurry{
+.page2 .question .blurry {
     opacity: 0.3;
 }
 
-.question .correct figcaption{
+.page2 .question .correct figcaption {
     color: #009C22;
-    
 }
-.question .incorrect figcaption{
+
+.page2 .question .incorrect figcaption {
     color: #FF4B4B;
 }
 
-.finish{
+.page2 .finish {
     width: 375px;
     padding: 18px;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
-
 }
-.finish div{
+
+.page2 .finish div {
     /* display: flex; */
     gap: 21px;
 }
-.finish img{
+
+.page2 .finish img {
     width: 100%;
 }
-.finish h1{
+
+.page2 .finish h1 {
     width: 100%;
     height: 100px;
-    
     font-family: Roboto;
     font-weight: bold;
     font-size: 19px;
     line-height: 22px;
-    
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
     background: #EC362D;
     color: #FFFFFF;
 }
-.finish h2{
+
+.page2 .finish h2 {
     height: 96px;
     font-family: Roboto;
-    font-weight: bold;   
+    font-weight: bold;
     font-size: 17px;
-    line-height: 20px;    
-
+    line-height: 20px;
     display: flex;
     align-items: center;
-    
     color: #484848;
 }
 
-.restart-quizz{
+.page2 .restart-quizz {
     position: relative;
-    top: 32px; 
+    top: 32px;
     margin: 0 auto;
     width: 220px;
     height: 44px;
-    
     border: none;
     border-radius: 15px;
-    
     font-family: Roboto;
-    
     font-size: 18px;
     line-height: 21px;
-    
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #EC362D;
     color: #FFF5F4;
 }
-.back-home{
+
+.page2 .back-home {
     position: relative;
-    top: 32px;  
+    top: 32px;
     margin: 0 auto;
     width: 220px;
     height: 44px;
-    
     font-family: Roboto;
     font-size: 18px;
     line-height: 21px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-    
     color: #818181;
 }
-.hidden {
+
+.page2 .hidden {
     display: none;
 }
