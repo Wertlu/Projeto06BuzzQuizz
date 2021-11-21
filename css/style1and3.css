@@ -156,6 +156,9 @@ header h1{
     width: 340px;
     height: 181px;
     position: relative;
+    border-radius: 5px;
+    background: 340px 181px;
+    /* atenção */
 }
 
 .quizz-box figure img {
@@ -163,6 +166,7 @@ header h1{
     height: 181px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%);
     border-radius: 5px;
+
 }
 
 .quizz-box figure .settings {
@@ -272,10 +276,10 @@ header h1{
     justify-content: center;
     gap: 9px;
     width: 600px;
-    height: 252px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 85px;
+    padding: 24px 0px;
 }
 
 .quizz-creation-page input,
@@ -285,14 +289,15 @@ header h1{
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
-    padding: 0px 23px;
     outline: none;
     font-weight: normal;
     font-size: 19px;
     line-height: 22px;
+    padding: 0px 10px;
 }
 
-.inputs input::placeholder {
+.quizz-creation-page input::placeholder,
+.quizz-creation-page textarea::placeholder {
     font-style: italic;
     font-weight: normal;
     font-size: 19px;
@@ -437,10 +442,11 @@ header h1{
     }
     .inputs {
         width: 100%;
-        padding: 0px 18px;
+        padding: 24px 24px 0px;
     }
     .quizz-creation-page input {
         width: 100%;
+        padding: 0px 10px;
     }
     .quizz-creation-page ul {
         width: 100%

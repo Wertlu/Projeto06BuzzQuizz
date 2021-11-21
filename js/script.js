@@ -10,7 +10,7 @@ let numQuestions
 let levelsHits
 let idQuiz
 
-let userHasQuizz = false //boolean //Essa parte precisa das funções de criação de quizzes do usuário
+let userHasQuizz = true //boolean //Essa parte precisa das funções de criação de quizzes do usuário
 
 function getAllQuizzes(){
     const promiseAllQuizzes = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
