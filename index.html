@@ -23,19 +23,19 @@
         <div class="container">
             <div class="quizz-creation-caller">
                 <span>Você não criou nenhum quizz ainda :(</span>
-                <button onclick="showCreationQuiz()"> 
+                <button onclick="showCreationQuiz()" data-identifier="create-quizz"> 
                     Criar Quizz
                 </button>
             </div>
             <div class="user-quizzes">
                 <h1>Seus Quizzes
-                    <ion-icon name="add-circle" onclick="showCreationQuiz()"></ion-icon>
+                    <ion-icon name="add-circle" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                 </h1>
                 <div class="quizz-box">
                     <figure>
                         <img src="assets\Alnwick_Castle.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -45,7 +45,7 @@
                     <figure>
                         <img src="assets\De_Ferias_com_o_Ex.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -55,7 +55,7 @@
                     <figure>
                         <img src="assets\Alnwick_Castle.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -65,7 +65,7 @@
                     <figure>
                         <img src="assets\De_Ferias_com_o_Ex.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -76,7 +76,7 @@
             </div>
             <div class="all-quizzes">
                 <h1>Todos os Quizzes</h1>
-                <div class="quizz-box">
+                <div class="quizz-box" data-identifier="general-quizzes">
 <!--                     <figure>
                         <img src="assets/Os_Simpsons.png">
                         <figcaption>
