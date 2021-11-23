@@ -215,10 +215,11 @@ function quizzSender() {
     promise.then(lastCreationPageCaller);
     promise.catch();
 }
+let id = "";
 
 function lastCreationPageCaller(servResponse) {
     let userQuizzesId = []
-    let id = servResponse.data.id;
+    id = servResponse.data.id;
     userQuizzesId.push(id);
     const idString = localStorage.getItem("id");
     if (idString === null) {
