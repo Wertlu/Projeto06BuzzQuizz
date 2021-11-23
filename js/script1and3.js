@@ -220,6 +220,7 @@ let id = "";
 function lastCreationPageCaller(servResponse) {
     let userQuizzesId = []
     id = servResponse.data.id;
+
     userQuizzesId.push(id);
     const idString = localStorage.getItem("id");
     if (idString === null) {
@@ -244,6 +245,8 @@ function lastCreationPageCaller(servResponse) {
     </figure>
     <button onclick="/*page2(${servResponse.data.id})*/" >Acessar Quizz</button>
     <span onclick="homeCaller()">Voltar para Home</span>`
+    console.log(userQuizzesId);
+
 }
 
 function homeCaller() {

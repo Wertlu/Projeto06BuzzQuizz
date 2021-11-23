@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-desktop.css">
-    <link rel="stylesheet" href="./css/style1and3.css">
+    <link rel="stylesheet" href="/css/style1and3.css">
     <title>BuzzQuizz</title>
 </head>
 
@@ -210,8 +210,94 @@
                 <span class="quizz-levels-qty-error"></span>
             </div>
             <button onclick="errorController(this);">
-        Prosseguir para criar as perguntas
-    </button>
+            Prosseguir para criar as perguntas
+            </button>
+        </div>
+            <div class="questions-creation hidden">
+                <h1>
+                    Crie suas perguntas
+                </h1>
+                <ul>
+                    <li class="selected">
+                        <h2>Pergunta 1</h2>
+                        <ion-icon name="create-outline"></ion-icon>
+                        <input class="question-text" type="text" placeholder="Texto da pergunta">
+                        <span class="question-text-error"></span>
+                        <input class="question-color" type="text" placeholder="Cor de fundo da pergunta">
+                        <span class="question-color-error"></span>
+                        <h2 class="subtitle">Resposta correta</h2>
+                        <input class="correct-answer" type="text" placeholder="Resposta correta">
+                        <span class="correct-answer-error"></span>
+                        <input class="correct-answer-url-img" type="text" placeholder="URL da imagem">
+                        <span class="correct-answer-url-img-error"></span>
+                        <h2 class="subtitle">Respostas incorretas</h2>
+                        <input class="incorrect-answer" type="text" placeholder="Resposta incorreta 1">
+                        <span class="incorrect-answer-error"></span>
+                        <input class="incorrect-answer-url-img" type="text" placeholder="URL da imagem 1">
+                        <span class="incorrect-answer-url-img-error"></span>
+                        <input class="incorrect-answer" type="text" placeholder="Resposta incorreta 2">
+                        <span class="incorrect-answer-error"></span>
+                        <input class="incorrect-answer-url-img" type="text" placeholder="URL da imagem 2">
+                        <span class="incorrect-answer-url-img-error"></span>
+                        <input class="incorrect-answer" type="text" placeholder="Resposta incorreta 3">
+                        <span class="incorrect-answer-error"></span>
+                        <input type="text" placeholder="URL da imagem 3">
+                        <span class="incorrect-answer-url-img-error"></span>
+                    </li>
+                    <!-- <li>
+                <h2>Pergunta 2</h2>
+                <ion-icon name="create-outline"></ion-icon>
+                <input class="question-text" type="text" placeholder="Texto da pergunta">
+                <input class="question-color" type="text" placeholder="Cor de fundo da pergunta">
+                <h2 class="subtitle">Resposta correta</h2>
+                <input class="correct-answer" type="text" placeholder="Resposta correta">
+                <input class="correct-annswer-url-img" type="text" placeholder="URL da imagem">
+                <h2 class="subtitle">Respostas incorretas</h2>
+                <input class="incorrect-annswer" type="text" placeholder="Resposta incorreta 1">
+                <input class="incorrect-annswer-url-img" type="text" placeholder="URL da imagem 1">
+                <input class="incorrect-annswer" type="text" placeholder="Resposta incorreta 2">
+                <input class="incorrect-annswer-url-img" type="text" placeholder="URL da imagem 2">
+                <input class="incorrect-annswer" type="text" placeholder="Resposta incorreta 3">
+                <input class="incorrect-annswer-url-img" type="text" placeholder="URL da imagem 3">
+            </li> -->
+                </ul>
+                <button onclick="errorController(this)">Prosseguir para criar níveis</button>
+            </div>
+            <div class="level-creation hidden">
+                <h1>Agora, decida os níveis</h1>
+                <ul>
+                    <li class="selected">
+                        <h2>Nível 1</h2>
+                        <ion-icon name="create-outline"></ion-icon>
+                        <input class="level-title" type="text" placeholder="Título do nível">
+                        <span class=""></span>
+                        <input class="min-percent" type="text" placeholder="% de acerto mínima">
+                        <input class="level-img-url" type="text" placeholder="URL da imagem do nível">
+                        <textarea class="level-description" type="text" placeholder="Descrição do nível"></textarea>
+                    </li>
+                    <li>
+                        <h2>Nível 2</h2>
+                        <ion-icon name="create-outline"></ion-icon>
+                        <input class="level-title" type="text" placeholder="Título do nível">
+                        <input class="min-percent" type="text" placeholder="% de acerto mínima">
+                        <input class="level-img-url" type="text" placeholder="URL da imagem do nível">
+                        <textarea class="level-description" type="text" placeholder="Descrição do nível"></textarea>
+                    </li>
+                </ul>
+                <button>Prosseguir pra criar níveis</button>
+            </div>
+            <div class="quizz-creation-finish hidden">
+                <h1>Seu quizz está pronto!</h1>
+                <figure>
+                    <img src="assets/Alnwick_Castle.png" alt="">
+                    <figcaption>
+                        O quão Pottherhead é você?
+                    </figcaption>
+                </figure>
+                <button>Acessar Quizz</button>
+                <span>Voltar para Home</span>
+            </div>
+            </div>
         </div>
         <div class="questions-creation hidden">
             <h1>
@@ -232,8 +318,8 @@
     </div>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/script1and3.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- <script src="/js/script1and3.js"></script> -->
 </body>
 
 </html>
