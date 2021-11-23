@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style-desktop.css">
+    <link rel="stylesheet" href="/css/style-desktop.css">
     <link rel="stylesheet" href="./css/style1and3.css">
     <title>BuzzQuizz</title>
 </head>
@@ -23,30 +23,18 @@
         <div class="container">
             <div class="quizz-creation-caller">
                 <span>Você não criou nenhum quizz ainda :(</span>
-
-                <button onclick="creationCaller()">
-
-                <button onclick="showCreationQuiz()"> 
-
-                    Criar Quizzwha
+                <button onclick="creationCaller()" data-identifier="create-quizz">
+                    Criar Quizz
                 </button>
             </div>
             <div class="user-quizzes">
                 <h1>Seus Quizzes
-
-                    <ion-icon onclick="creationCaller()" name="add-circle"></ion-icon>
-
-                    <ion-icon name="add-circle" onclick="showCreationQuiz()"></ion-icon>
-
+                    <ion-icon onclick="creationCaller()" name="add-circle" data-identifier="create-quizz"></ion-icon>
                 </h1>
                 <div class="quizz-box">
                     <figure style="background: url(https://cdn.discordapp.com/attachments/385967283824099328/911638505086676992/unknown.png);">
                         <div class="settings">
-
-                            <ion-icon onclick="creationCaller()" name="create-outline"></ion-icon>
-
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
-
+                            <ion-icon onclick="creationCaller()" name="create-outline" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -56,7 +44,7 @@
                     <figure>
                         <img src="assets\De_Ferias_com_o_Ex.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -66,7 +54,7 @@
                     <figure>
                         <img src="assets\Alnwick_Castle.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -76,7 +64,7 @@
                     <figure>
                         <img src="assets\De_Ferias_com_o_Ex.png">
                         <div class="settings">
-                            <ion-icon name="create-outline" onclick="showCreationQuiz()"></ion-icon>
+                            <ion-icon name="create-outline" onclick="showCreationQuiz()" data-identifier="create-quizz"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
                         </div>
                         <figcaption>
@@ -87,7 +75,7 @@
             </div>
             <div class="all-quizzes">
                 <h1>Todos os Quizzes</h1>
-                <div class="quizz-box">
+                <div class="quizz-box" data-identifier="general-quizzes">
                     <!--                     <figure>
                         <img src="assets/Os_Simpsons.png">
                         <figcaption>

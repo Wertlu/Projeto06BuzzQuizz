@@ -10,7 +10,7 @@ let numQuestions
 let levelsHits
 let idQuiz
 
-let userHasQuizz = false //boolean //Essa parte precisa das funções de criação de quizzes do usuário
+let userHasQuizz = true //boolean //Essa parte precisa das funções de criação de quizzes do usuário
 
 function getAllQuizzes() {
     const promiseAllQuizzes = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
@@ -26,7 +26,7 @@ function getAllQuizzes() {
             let idQuiz = quizzesObj[i].id
 
             quizzesHTML.innerHTML += `
-                <figure onclick="showQuiz(${idQuiz})">
+                <figure onclick="showQuiz(${idQuiz})" data-identifier="quizz-card">
                     <img src="${imageQuiz}">
                     <figcaption>
                         ${titleQuiz}
@@ -120,7 +120,7 @@ function loadQuestions(element, quiz) {
         let colorQuestion = questions[i].color
 
         element.innerHTML += `
-        <div class="question">
+        <div class="question" data-identifier="question">
             <h1 style="background:${colorQuestion}">${titleQuestion}</h1>
             <figure class="answers"></figure>
         </div>
@@ -130,7 +130,7 @@ function loadQuestions(element, quiz) {
 
         loadAnswers(answer, questions[i])
     }
-    element.innerHTML += `<div class="finish hidden"></div>`
+    element.innerHTML += `<div class="finish hidden" data-identifier="quizz-result"></div>`
 
 }
 
@@ -146,7 +146,7 @@ function loadAnswers(element, question) {
         let isCorrect = answer[i].isCorrectAnswer;
 
         element.innerHTML += `
-        <div class="${isCorrect}" onclick="addBlurry(this)">
+        <div class="${isCorrect}" onclick="addBlurry(this)" data-identifier="answer">
             <img src="${imageAnswer}">
             <figcaption>${textAnswer}</figcaption>
         </div>
@@ -165,9 +165,9 @@ function addBlurry(element) {
     element.classList.remove('blurry')
     checkAnswer(element)
     setTimeout(() => {
-        divAnswers.parentNode.nextElementSibling.scrollIntoView()
+        divAnswers.parentNode.nextElementSibling.scrollIntoView({ behavior: "smooth" })
     }, 2000)
-    setTimeout(showFinish(), 2000)
+    setTimeout(showFinish(), 2000);
 }
 
 function checkAnswer(element) {
@@ -254,7 +254,7 @@ function restartQuiz() {
         answer.classList.remove('incorrect')
     }
     getQuiz(idQuiz)
-    element.scrollIntoView()
+    element.scrollIntoView({ behavior: "smooth" })
 }
 
 function showUserQuizzes(userHasQuizz) {

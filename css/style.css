@@ -250,6 +250,8 @@ div .quizz-settings-caller ion-icon {
     margin-bottom: 20px;
     color: #FFFFFF;
     background: #434CA0;
+
+    overflow-wrap: anywhere;
 }
 
 .page2 .question figure {
@@ -328,6 +330,7 @@ div .quizz-settings-caller ion-icon {
 .page2 .restart-quizz {
     position: relative;
     top: 32px;
+    
     margin: 0 auto;
     width: 220px;
     height: 44px;
